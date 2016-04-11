@@ -1,0 +1,4 @@
+# Ignore result files
+*.eps
+# Local helper shell scripts
+*.sh
