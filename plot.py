@@ -393,11 +393,66 @@ TARGET = [
                 },
             ]
     },  # End of VICBF FPR scaling graph for u=100000
+    {  # Graph to display the VICBF scaling depending on FPR, u=100000, compressed only
+        "output": "eval-simu-vicbf-scaling-u100000-fpr-compressed.eps",
+        "xlabel": "Step",
+        "ylabel": "Size (MB)",
+        "title": "Median Compressed VI-CBF Size for different FPRs over Time (u=100k, Orphans only)",
+        "options":
+            [
+                "set encoding iso_8859_1",
+                "set termoption dash",
+                "set key top left",
+                "set for [i=1:5] linetype i lt i",
+                'set style line 1 lt 6 lc rgb "red" lw ' + LINEWIDTH,
+                'set style line 2 lt 1 lc rgb "red" lw ' + LINEWIDTH,
+                'set style line 3 lt 6 lc rgb "blue" lw ' + LINEWIDTH,
+                'set style line 4 lt 1 lc rgb "blue" lw ' + LINEWIDTH,
+                'set style line 5 lt 6 lc rgb "green" lw ' + LINEWIDTH,
+                'set style line 6 lt 1 lc rgb "green" lw ' + LINEWIDTH,
+            ],
+        "plot":
+            [
+                {
+                    "input": "u100000/vicbf-scaling-fpr0.1-proto1.csv",
+                    "x": "1",
+                    "y": "($21 / 1024 / 1024)",
+                    "title": "Compressed (FPR=0.1 \261 0.001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 6"
+                        ]
+                },
+                {
+                    "input": "u100000/vicbf-scaling-fpr0.01-proto1.csv",
+                    "x": "1",
+                    "y": "($21 / 1024 / 1024)",
+                    "title": "Compressed (FPR=0.01 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 2",
+                        ]
+                },
+                {
+                    "input": "u100000/vicbf-scaling-fpr0.001-proto1.csv",
+                    "x": "1",
+                    "y": "($21 / 1024 / 1024)",
+                    "title": "Compressed (FPR=0.001 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 4"
+                        ]
+                },
+            ]
+    },  # End of VICBF FPR scaling graph for u=100000
     {  # Graph to display the VICBF scaling depending on FPR for u=1000
         "output": "eval-simu-vicbf-scaling-u1000-fpr.eps",
         "xlabel": "Step",
         "ylabel": "Size (MB)",
-        "title": "Median Size of Serialized VI-CBF for different FPRs over Time (100k initial Users, Orphans only)",
+        "title": "Median Size of Serialized VI-CBF for different FPRs over Time (1k initial Users, Orphans only)",
         "options":
             [
                 "set encoding iso_8859_1",
@@ -481,6 +536,61 @@ TARGET = [
                 },
             ]
     },  # End of VICBF FPR scaling graph for u=1000
+    {  # Graph to display the VICBF scaling depending on FPR for u=1000
+        "output": "eval-simu-vicbf-scaling-u1000-fpr-compressed.eps",
+        "xlabel": "Step",
+        "ylabel": "Size (MB)",
+        "title": "Median Compressed VI-CBF Size for different FPRs over Time (u=1k, Orphans only)",
+        "options":
+            [
+                "set encoding iso_8859_1",
+                "set termoption dash",
+                "set key top left",
+                "set for [i=1:5] linetype i lt i",
+                'set style line 1 lt 6 lc rgb "red" lw ' + LINEWIDTH,
+                'set style line 2 lt 1 lc rgb "red" lw ' + LINEWIDTH,
+                'set style line 3 lt 6 lc rgb "blue" lw ' + LINEWIDTH,
+                'set style line 4 lt 1 lc rgb "blue" lw ' + LINEWIDTH,
+                'set style line 5 lt 6 lc rgb "green" lw ' + LINEWIDTH,
+                'set style line 6 lt 1 lc rgb "green" lw ' + LINEWIDTH,
+            ],
+        "plot":
+            [
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.1-proto1.csv",
+                    "x": "1",
+                    "y": "($21 / 1024 / 1024)",
+                    "title": "Compressed (FPR=0.1 \261 0.001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 6"
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.01-proto1.csv",
+                    "x": "1",
+                    "y": "($21 / 1024 / 1024)",
+                    "title": "Compressed (FPR=0.01 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 2",
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.001-proto1.csv",
+                    "x": "1",
+                    "y": "($21 / 1024 / 1024)",
+                    "title": "Compressed (FPR=0.001 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 4"
+                        ]
+                },
+            ]
+    },  # End of VICBF FPR scaling graph for u=1000, compressed only
     {  # Graph to display the VICBF scaling depending on FPR, productive KVs only, u=100000
         "output": "eval-simu-vicbf-scaling-u100000-productive.eps",
         "xlabel": "Step",
@@ -657,6 +767,204 @@ TARGET = [
                 },
             ]
     },  # End of VICBF FPR scaling graph for u=100000 for productive KVs only
+    {  # Graph to display the VICBF scaling depending on FPR, productive KVs only, u=1000, only compressed
+        "output": "eval-simu-vicbf-scaling-u1000-productive-compressed.eps",
+        "xlabel": "Step",
+        "ylabel": "Size (MB)",
+        "title": "Median Compressed VI-CBF Size for different FPRs over Time (u=1k, Non-Orphans only)",
+        "options":
+            [
+                "set encoding iso_8859_1",
+                "set termoption dash",
+                "set key top left",
+                "set for [i=1:5] linetype i lt i",
+                'set style line 1 lt 6 lc rgb "red" lw ' + LINEWIDTH,
+                'set style line 2 lt 1 lc rgb "red" lw ' + LINEWIDTH,
+                'set style line 3 lt 6 lc rgb "blue" lw ' + LINEWIDTH,
+                'set style line 4 lt 1 lc rgb "blue" lw ' + LINEWIDTH,
+                'set style line 5 lt 6 lc rgb "green" lw ' + LINEWIDTH,
+                'set style line 6 lt 1 lc rgb "green" lw ' + LINEWIDTH,
+            ],
+        "plot":
+            [
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.1-retronly.csv",
+                    "x": "1",
+                    "y": "($6 / 1024 / 1024)",
+                    "title": "Compressed (FPR=0.1 \261 0.001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 6"
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.01-retronly.csv",
+                    "x": "1",
+                    "y": "($6 / 1024 / 1024)",
+                    "title": "Compressed (FPR=0.01 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 2",
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.001-retronly.csv",
+                    "x": "1",
+                    "y": "($6 / 1024 / 1024)",
+                    "title": "Compressed (FPR=0.001 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 4"
+                        ]
+                },
+            ]
+    },  # End of VICBF FPR scaling graph for u=100000 for productive KVs only
+    {  # Graph to display the VICBF scaling depending on FPR, productive KVs only, u=1000, static network
+        "output": "eval-simu-vicbf-scaling-u1000-productive-static.eps",
+        "xlabel": "Step",
+        "ylabel": "Size (KB)",
+        "title": "Median Size of Serialized VI-CBF for different FPRs over Time (1k initial Users, static network)",
+        "options":
+            [
+                "set encoding iso_8859_1",
+                "set termoption dash",
+                "set key top left",
+                "set for [i=1:5] linetype i lt i",
+                'set style line 1 lt 6 lc rgb "red" lw ' + LINEWIDTH,
+                'set style line 2 lt 1 lc rgb "red" lw ' + LINEWIDTH,
+                'set style line 3 lt 6 lc rgb "blue" lw ' + LINEWIDTH,
+                'set style line 4 lt 1 lc rgb "blue" lw ' + LINEWIDTH,
+                'set style line 5 lt 6 lc rgb "green" lw ' + LINEWIDTH,
+                'set style line 6 lt 1 lc rgb "green" lw ' + LINEWIDTH,
+            ],
+        "plot":
+            [
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.1-retronly-static.csv",
+                    "x": "1",
+                    "y": "($5 / 1024)",
+                    "title": "Uncompressed (FPR=0.1 \261 0.001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 5",
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.01-retronly-static.csv",
+                    "x": "1",
+                    "y": "($5 / 1024)",
+                    "title": "Uncompressed (FPR=0.01 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 1",
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.001-retronly-static.csv",
+                    "x": "1",
+                    "y": "($5 / 1024)",
+                    "title": "Uncompressed (FPR=0.001 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 3"
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.1-retronly-static.csv",
+                    "x": "1",
+                    "y": "($6 / 1024)",
+                    "title": "Compressed (FPR=0.1 \261 0.001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 6"
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.01-retronly-static.csv",
+                    "x": "1",
+                    "y": "($6 / 1024)",
+                    "title": "Compressed (FPR=0.01 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 2",
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.001-retronly-static.csv",
+                    "x": "1",
+                    "y": "($6 / 1024)",
+                    "title": "Compressed (FPR=0.001 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 4"
+                        ]
+                },
+            ]
+    },  # End of VICBF FPR scaling graph for u=100000 for productive KVs only, static network
+    {  # Graph to display the VICBF scaling depending on FPR, productive KVs only, u=1000, static network, compressed only
+        "output": "eval-simu-vicbf-scaling-u1000-productive-static-compressed.eps",
+        "xlabel": "Step",
+        "ylabel": "Size (KB)",
+        "title": "Median Compressed VI-CBF Size for different FPRs over Time (u=1k, static network)",
+        "options":
+            [
+                "set encoding iso_8859_1",
+                "set termoption dash",
+                "set key top left",
+                "set for [i=1:5] linetype i lt i",
+                'set style line 1 lt 6 lc rgb "red" lw ' + LINEWIDTH,
+                'set style line 2 lt 1 lc rgb "red" lw ' + LINEWIDTH,
+                'set style line 3 lt 6 lc rgb "blue" lw ' + LINEWIDTH,
+                'set style line 4 lt 1 lc rgb "blue" lw ' + LINEWIDTH,
+                'set style line 5 lt 6 lc rgb "green" lw ' + LINEWIDTH,
+                'set style line 6 lt 1 lc rgb "green" lw ' + LINEWIDTH,
+            ],
+        "plot":
+            [
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.1-retronly-static.csv",
+                    "x": "1",
+                    "y": "($6 / 1024)",
+                    "title": "Compressed (FPR=0.1 \261 0.001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 6"
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.01-retronly-static.csv",
+                    "x": "1",
+                    "y": "($6 / 1024)",
+                    "title": "Compressed (FPR=0.01 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 2",
+                        ]
+                },
+                {
+                    "input": "u1000/vicbf-scaling-fpr0.001-retronly-static.csv",
+                    "x": "1",
+                    "y": "($6 / 1024)",
+                    "title": "Compressed (FPR=0.001 \261 0.0001)",
+                    "type": "lines",
+                    "options":
+                        [
+                            "ls 4"
+                        ]
+                },
+            ]
+    },  # End of VICBF FPR scaling graph for u=100000 for productive KVs only, static network
     {  # Graph to display the median number of Type I and II orphaned records over time
         "output": "eval-simu-orphaned-records.eps",
         "xlabel": "Step",
